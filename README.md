@@ -9,7 +9,7 @@ Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un d
 
 ## Fichiers disponibles
 
-Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema].
+Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
 - [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
 - [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json`  ;
