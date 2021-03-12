@@ -1,1 +1,1 @@
-frictionless==3.11.1
+frictionless==4.1
