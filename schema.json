@@ -76,6 +76,18 @@
          "constraints":{
             "required":true
          }
+      },
+      {
+         "name":"classification",
+         "description":"Classification de l'objet.",
+         "example":"Classification A",
+         "type":"array",
+         "arrayItem":{
+            "type": "string",
+            "constraints": {
+               "enum": ["Classification A", "Classification B", "Classification C"]
+            }
+         }
       }
    ],
    "primaryKey":"id"
