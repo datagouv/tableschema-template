@@ -1,4 +1,4 @@
 id,date_creation,nom,classification
-42,2020-02-27,Brouette,"[""Classification A""]"
-44,2020-02-25,Pelle,"[""Classification A"",""Classification B"",""Classification C""]"
-45,2020-02-25,Bus,"[""Classification A"",""Classification C""]"
+42,2020-02-27,Brouette,Classification A
+44,2020-02-25,Pelle,Classification C
+45,2020-02-25,Bus,Classification A
