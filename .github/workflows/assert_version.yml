@@ -1,8 +1,7 @@
-name: Assert version is the same across schema
+name: Vérification de la cohérénce des versions dans tous les champs du schéma
 
 on:
-  pull_request:
-    branches: master
+  push:
 
 jobs:
   build:
