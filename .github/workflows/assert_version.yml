@@ -28,6 +28,7 @@ jobs:
           pattern = r'v\d+.\d+.\d+'
           homepage = schema['homepage']
           version = schema['version']
+          
           def check(obj, parents=''):
             errors = []
             if isinstance(obj, str):
