@@ -1,4 +1,4 @@
-name: Vérification de la cohérénce des versions dans tous les champs du schéma
+name: Vérification de la cohérence des versions dans tous les champs du schéma
 
 on:
   push:
