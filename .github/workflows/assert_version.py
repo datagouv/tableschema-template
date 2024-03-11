@@ -1,13 +1,9 @@
 import json
 import re
-with open('schema.json', 'r') as f:
-    schema = json.load(f)
-pattern = r'v\d+.\d+.\d+'
-homepage = schema['homepage']
-version = schema['version']
+import os
 
 
-def check(obj, parents=''):
+def check(obj, version, parents=''):
     """
     This functions recursively parses all fields in the schema looking for
     version names that would not be the same as the one mentionned
@@ -23,23 +19,46 @@ def check(obj, parents=''):
     # if field is a list, we check every item
     elif isinstance(obj, list):
         for idx, k in enumerate(obj):
-            errors += check(k, parents=parents + f'[{str(idx)}]')
+            errors += check(
+                k,
+                version,
+                parents=parents + f'[{str(idx)}]'
+            )
     # if field is a dict, we check every value
     elif isinstance(obj, dict):
         for k in obj:
             errors += check(
-                obj[k], parents=parents + '.' + k
-                if parents else k
+                obj[k],
+                version,
+                parents=parents + '.' + k if parents else k
             )
     return errors
 
 
-errors = check(schema)
-if errors:
-    message = (
-        "Errors are mismatched within the schema, "
-        f"expected version {version} but:"
-    )
-    for e in errors:
-        message += f'\n- {e[0]} has version {e[1]}'
-    raise Exception(message)
+to_check = []
+
+if 'schema.json' in os.listdir():
+    to_check.append('schema.json')
+
+elif 'datapackage.json' in os.listdir():
+    with open('datapackage.json', 'r') as f:
+        datapackage = json.load(f)
+    for r in datapackage['resources']:
+        to_check.append(r['schema'])
+
+for schema_path in to_check:
+    with open(schema_path, 'r') as f:
+        schema = json.load(f)
+    pattern = r'v\d+.\d+.\d+'
+    homepage = schema['homepage']
+    version = schema['version']
+
+    errors = check(schema, version)
+    if errors:
+        message = (
+            f"Errors are mismatched within the schema '{schema}', "
+            f"expected version {version} but:"
+        )
+        for e in errors:
+            message += f'\n- {e[0]} has version {e[1]}'
+        raise Exception(message)
