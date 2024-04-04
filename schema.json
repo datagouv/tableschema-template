@@ -9,8 +9,8 @@
    ],
    "countryCode":"FR",
    "homepage":"https://github.com/mon-orga/schema-objets-importants",
-   "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/schema.json",
-   "image":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/irve.png",
+   "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.0/schema.json",
+   "image":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.0/irve.png",
    "licenses":[
       {
          "title":"Etalab Licence Ouverte 2.0",
@@ -22,7 +22,7 @@
       {
          "title":"Fichier valide (CSV)",
          "name":"exemple-valide-csv",
-         "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/exemple-valide.csv"
+         "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.0/exemple-valide.csv"
       }
    ],
    "sources":[
@@ -33,7 +33,7 @@
    ],
    "created":"2018-06-29",
    "lastModified":"2019-05-06",
-   "version":"0.1.1",
+   "version":"v0.1.0",
    "contributors":[
       {
          "title":"John Smith",
